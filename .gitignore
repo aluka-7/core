@@ -1,0 +1,29 @@
+bin/
+.settings/
+.idea/
+target/
+logs/
+*svn/
+.npm
+
+# Eclipse project files
+.classpath
+.project
+
+
+# Intellij project files
+*.iws
+*.iml
+*.ipr
+
+# Others
+*.class
+.DS_Store
+
+# node
+node_modules
+.cache
+dist
+lib
+src/main/java/cn/forchange/core/api
+vendor

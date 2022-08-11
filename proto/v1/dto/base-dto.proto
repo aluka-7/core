@@ -1,0 +1,75 @@
+syntax = "proto3";
+package opt;
+
+option go_package = "github.com/aluka-7/core/proto/v1/opt";
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+
+message IdReq {
+	//主键id
+	int64 id = 1 [(gogoproto.jsontag) = "id", (gogoproto.moretags) = "validate:\"required\""];
+}
+
+message IdResp {
+	//主键id
+	int64 id = 1 [(gogoproto.jsontag) = "id", (gogoproto.moretags) = "validate:\"required\""];
+}
+
+message StrIdReq {
+	// 主键id
+	string id = 1 [(gogoproto.jsontag) = "id", (gogoproto.moretags) = "validate:\"required\""];
+}
+
+message IdsReq {
+	repeated int64 ids = 1 [(gogoproto.jsontag) = "ids", (gogoproto.moretags) = "validate:\"required\""];
+}
+
+message StrIdsReq {
+	repeated string ids = 1 [(gogoproto.jsontag) = "ids", (gogoproto.moretags) = "validate:\"required\""];
+}
+
+message Sorted {
+	string id = 1;
+	bool desc = 2;
+}
+
+message Filtered {
+	string field = 1;
+	string op = 2;
+	string value = 3;
+	string valueType = 4;
+}
+message QueryReq {
+	int64 page = 1  [(gogoproto.jsontag) = "page"];
+	int64 pageSize = 2  [(gogoproto.jsontag) = "pageSize"];
+	repeated Sorted sorted = 3  [(gogoproto.jsontag) = "sorted"];
+	repeated Filtered filtered = 4  [(gogoproto.jsontag) = "filtered"];
+}
+
+message Reply {
+	//返回状态码，0表示失败
+	int32 status = 1 [(gogoproto.jsontag) = "status"];
+	//返回信息描述
+	string message = 2 [(gogoproto.jsontag) = "message"];
+}
+
+message IdReply {
+	int64 id = 1 [(gogoproto.jsontag) = "id"];
+}
+
+message ListReply {
+	int64 totalPages = 1 [(gogoproto.jsontag) = "totalPages"];
+	int64 totalRecords = 2 [(gogoproto.jsontag) = "totalRecords"];
+	int64 pageSize = 3 [(gogoproto.jsontag) = "pageSize"];
+	int64 pageNumber = 4 [(gogoproto.jsontag) = "pageNumber"];
+}
+
+message IdsReply {
+	repeated int64 ids = 1 [(gogoproto.jsontag) = "ids"];
+}
+
+message BoolReply{
+	bool result = 1;
+}
+

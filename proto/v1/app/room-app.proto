@@ -1,0 +1,12 @@
+syntax = "proto3";
+package app;
+
+import "google/protobuf/empty.proto";
+
+import "proto/v1/dto/room-dto.proto";
+import "proto/v1/dto/base-dto.proto";
+
+service RoomAppRpc {
+  // 获取用户列表
+  rpc ListRoom (opt.QueryReq) returns (dto.ListRoomReply) {}
+}

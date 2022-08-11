@@ -1,0 +1,12 @@
+syntax = "proto3";
+package opt;
+
+import "google/protobuf/empty.proto";
+
+import "proto/v1/dto/user-dto.proto";
+import "proto/v1/dto/base-dto.proto";
+
+service UserAppRpc {
+  // 获取用户列表
+  rpc ListUser (opt.QueryReq) returns (dto.ListUserReply) {}
+}
