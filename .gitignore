@@ -15,15 +15,3 @@ logs/
 *.iws
 *.iml
 *.ipr
-
-# Others
-*.class
-.DS_Store
-
-# node
-node_modules
-.cache
-dist
-lib
-src/main/java/cn/forchange/core/api
-vendor
